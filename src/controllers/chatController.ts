@@ -19,7 +19,7 @@ export const sendMessage = async (req: AuthRequest, res: Response): Promise<void
     await saveMessage(req.user!._id.toString(), message, true);
     
     // Get bot answer
-    const answer = findAnswer(message);
+    const answer = await findAnswer(message);
     
     // Save bot answer
     await saveMessage(req.user!._id.toString(), answer, false);

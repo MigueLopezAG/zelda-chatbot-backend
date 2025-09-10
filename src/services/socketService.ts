@@ -38,7 +38,7 @@ export const setupWebSocket = (io: Server): void => {
         });
 
         // Obtener respuesta del bot
-        const answer = findAnswer(content);
+        const answer = await findAnswer(content);
         
         // Guardar respuesta del bot
         await saveMessage(socket.userId, answer, false);
